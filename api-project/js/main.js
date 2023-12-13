@@ -1,8 +1,8 @@
 //goal: by typing in a Disney film, it can filter and show the corresponding cards for that film 
 import "../css/style.css"
 
-const URL = `https://api.disneyapi.dev/character?films=Tangled`
-//filters based on characters who are in Tangled -> gives the character name and film 
+const URL = `https://api.disneyapi.dev/character`
+//filters based on characters who are in Tangled -> gives the character name and film
 
 async function getData(URL){
     try {
@@ -21,3 +21,16 @@ async function getData(URL){
     }
 }
 getData(URL);
+
+function all () {
+    arr.forEach((item) => DOMSelectors.cards.insertAdjacentHTML(
+        "beforeend",
+        `<div class="card"> 
+      <h2 class="title">${item.name}</h2> 
+      <img class="display-img" src="${item.img}" alt="">
+      <h3>${item.price}</h3>
+      <h3>${item.calories}</h3>`
+      )
+    );
+    }
+all ();

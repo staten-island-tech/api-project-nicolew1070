@@ -1,19 +1,29 @@
 /* colors to be changed  */
 :root {
-  --blue:#62c1e5;
-  --lightblue: #a0d9ef;
-  --darkblue: #20a7db;
-  --anotherblue: #89CFF3;
-  --mint: #D0E7D2;
-  --darkgreen: #618264;
-  --green: #79AC78;
-  --lightgreen: #B0D9B1;
-  --primary:  var(--mint);
-  --secondary: var(--darkgreen);
-  --tertiary: var(--green);
-  --quaternary: var(--lightgreen);
+  --blue:#b6ccfe;
+  --lightblue: #ccdbfd;
+  --darkblue: #abc4ff;
+  --anotherblue: #c1d3fe;
+  --primary:  var(--blue);
+  --secondary: var(--lightblue);
+  --tertiary: var(--darkblue);
+  --quaternary: var(--anotherblue);
+
 }
 
 body {
   background-color: var(--primary);
+}
+
+.card {
+  width: 22%;
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 1rem;
+  margin: 25px 25px;
+  box-shadow: 1rem 1rem 0.5rem var(--tertiary);
+  transition: all 0.3s ease-in-out;
 }
