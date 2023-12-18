@@ -1,10 +1,9 @@
-//goal: by typing in a Disney film, it can filter and show the corresponding cards for that film 
-import "../css/style.css"
+//goal: by typing in a Disney film, it can filter and show the corresponding cards for that film
 
-const URL = `https://api.disneyapi.dev/character`
+//const URL = `https://api.disneyapi.dev/character`
 //filters based on characters who are in Tangled -> gives the character name and film
 
-async function getData(URL){
+/* async function getData(URL){
     try {
         const response = await fetch(URL);
         console.log(response);
@@ -20,17 +19,29 @@ async function getData(URL){
         document.querySelector("h1").textContent = "Please search for something else";
     }
 }
-getData(URL);
+getData(URL); */
 
-function all () {
-    arr.forEach((item) => DOMSelectors.cards.insertAdjacentHTML(
+import "../css/style.css";
+
+const DOMSelectors = {
+    form: document.querySelector("#form"),
+    name: document.querySelector(".pok-name"),
+    type: document.querySelector(".pok-type"),
+    url: document.querySelector(".url"),
+}
+
+function card (pokemon) {
+    document.querySelector(".display").insertAdjacentHTML(
         "beforeend",
-        `<div class="card"> 
-      <h2 class="title">${item.name}</h2> 
-      <img class="display-img" src="${item.img}" alt="">
-      <h3>${item.price}</h3>
-      <h3>${item.calories}</h3>`
-      )
-    );
-    }
-all ();
+        `<div class="display-card"> 
+        <h2>${pokemon.name.value}</h2> 
+        <h3>${pokemon.type.value}</h3>  
+        <img class="display-img" src="${pokemon.url.value}" alt=""> 
+        <button class="remove-bn">Remove Pokemon</button> </div>`
+        );
+}
+
+DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    card(DOMSelectors);
+});

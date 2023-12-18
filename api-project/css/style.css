@@ -1,4 +1,4 @@
-/* colors to be changed  */
+/* colors to be changed
 :root {
   --blue:#b6ccfe;
   --lightblue: #ccdbfd;
@@ -13,17 +13,63 @@
 
 body {
   background-color: var(--primary);
+} */
+
+body,
+html,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.card {
-  width: 22%;
-  background-color: var(--secondary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 1rem;
-  margin: 25px 25px;
-  box-shadow: 1rem 1rem 0.5rem var(--tertiary);
-  transition: all 0.3s ease-in-out;
+body {
+    text-align: center;
+    
+}
+
+.display-card {
+    width: 23%;
+    background-color: #b7e4c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1rem;
+    margin: 20px 15px;
+}
+
+.display {
+display: flex;
+flex-wrap: wrap;
+width: 92vw;
+margin: 1rem auto;
+align-items: center;
+justify-content: center;
+}
+
+.display-img{
+    width: 45%;
+}
+
+.poke{
+    font-size: 30px;
+    margin: 10px 0px;
+}
+
+h1{
+    font-size: 55px;
+    margin: 10px 0px;
+}
+
+.pok-name{
+    font-size: 25px;
+}
+
+.pok-type{
+    font-size: 25px;
+}
+
+.url{
+    font-size: 25px;
 }
