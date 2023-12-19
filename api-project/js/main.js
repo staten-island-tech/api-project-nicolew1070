@@ -1,9 +1,9 @@
-//goal: by typing in a Disney film, it can filter and show the corresponding cards for that film
-
-//const URL = `https://api.disneyapi.dev/character`
+//goal: cick buttons to see characters from the different houses of harry potter 
+import "../css/style.css";
+const URL = `https://hp-api.onrender.com/api/characters`
 //filters based on characters who are in Tangled -> gives the character name and film
 
-/* async function getData(URL){
+async function getData(URL){
     try {
         const response = await fetch(URL);
         console.log(response);
@@ -14,34 +14,14 @@
         const data = await response.json();
         console.log(data);
         document.querySelector("h1").textContent = data.name;
-        document.querySelector("h2").textContent = data.films;
+        document.querySelector("h2").textContent = data.house;
     } catch (error) {
-        document.querySelector("h1").textContent = "Please search for something else";
+        document.querySelector("h1").textContent = "Harry Potter";
     }
 }
-getData(URL); */
+getData(URL);
 
-import "../css/style.css";
-
-const DOMSelectors = {
-    form: document.querySelector("#form"),
-    name: document.querySelector(".pok-name"),
-    type: document.querySelector(".pok-type"),
-    url: document.querySelector(".url"),
-}
-
-function card (pokemon) {
-    document.querySelector(".display").insertAdjacentHTML(
-        "beforeend",
-        `<div class="display-card"> 
-        <h2>${pokemon.name.value}</h2> 
-        <h3>${pokemon.type.value}</h3>  
-        <img class="display-img" src="${pokemon.url.value}" alt=""> 
-        <button class="remove-bn">Remove Pokemon</button> </div>`
-        );
-}
-
-DOMSelectors.form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    card(DOMSelectors);
-});
+//click a button -> `https://hp-api.onrender.com/api/characters/house/Ravenclaw`
+// `https://hp-api.onrender.com/api/characters/house/hufflepuff`
+// `https://hp-api.onrender.com/api/characters/house/slytherin`
+// `https://hp-api.onrender.com/api/characters/house/gryffindor`
