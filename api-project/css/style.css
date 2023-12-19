@@ -34,3 +34,7 @@ margin: 1rem auto;
 align-items: center;
 justify-content: center;
 }
+
+.btn {
+    background-color: var(--quaternary);
+}
