@@ -1,8 +1,8 @@
 const DOMSelectors = {
-slytherin: document.querySelector(".slyth"),
-hufflepuff: document.querySelector(".huffle"),
-ravenclaw: document.querySelector(".raven"),
-gryffindor: document.querySelector(".gryff"),
+underfive: document.querySelector("#five"),
+underten: document.querySelector("#ten"),
+underfifteen: document.querySelector("#fifteen"),
+undertwenty: document.querySelector("#twenty"),
 cards: document.querySelector(".display"),
 };
 
