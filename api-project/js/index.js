@@ -18,7 +18,7 @@ async function getData(URL) {
       document.querySelector("h3").textContent = "Error. Film is unavailable."
     }
  }
- getData(URL);
+ getData(URL); 
 
 function card(arr) {
   arr.forEach((item) => DOMSelectors.cards.insertAdjacentHTML(
@@ -30,6 +30,22 @@ function card(arr) {
     )
   );
 }
+
+function clearfields () {
+  DOMSelectors.search.value = "";
+}
+
+//does not work
+DOMSelectors.form.addEventListener("click", function (event) {
+ event.preventDefault();
+ let search = DOMSelectors.search.value
+ let newArr = data.films.filter((film) => film.name === search)
+ clearfields();
+ card(newArr);
+})
+
+
+
 
 /* let buttons = document.querySelectorAll(".btn")
 buttons.forEach((btn) => btn.addEventListener("click", function () {
