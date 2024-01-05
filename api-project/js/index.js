@@ -20,6 +20,13 @@ async function getData(URL) {
  }
  getData(URL); 
 
+/*  async function getData(URL) {
+  const response = await fetch (URL);
+  const data = await response.json();
+  console.log(data);
+ }
+ getData(URL); */
+
 function card(arr) {
   arr.forEach((item) => DOMSelectors.cards.insertAdjacentHTML(
       "beforeend",
@@ -28,21 +35,21 @@ function card(arr) {
     <img class="img" src="${item.imageUrl}" alt="">
     <h3></h3>`
     )
-  );
-}
+  )
+};
 
 function clearfields () {
   DOMSelectors.search.value = "";
-}
+};
 
 //does not work
 DOMSelectors.form.addEventListener("click", function (event) {
  event.preventDefault();
  let search = DOMSelectors.search.value
- let newArr = data.films.filter((film) => film.name === search)
- clearfields();
+ let newArr = data.filter((film) => film.films === search)
  card(newArr);
-})
+ clearfields();
+});
 
 
 
@@ -50,10 +57,10 @@ DOMSelectors.form.addEventListener("click", function (event) {
 /* let buttons = document.querySelectorAll(".btn")
 buttons.forEach((btn) => btn.addEventListener("click", function () {
     let type = btn.textContent
-    let newArr = data.filter((item) => item.salePrice.includes(type))
+    let newArr = data.filter((item) => item.films.includes(type))
     DOMSelectors.cards.innerHTML = ""
     card(newArr);
-  })) */
+  })); */
 
 //steam games api 
 
