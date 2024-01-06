@@ -16,13 +16,18 @@ body {
 }
 
 .btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 1rem;
-    margin: 20px 15px;
-    background-color: var(--quaternary);
+  background-color: var(--tertiary);
+  border-radius: 3px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  margin: 0.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: solid var(--secondary);
+  border-radius: 1rem;
+  font-family: 'Hind', sans-serif;
 }
 
 .display {
@@ -48,7 +53,20 @@ justify-content: center;
   padding-bottom: 40px;
 }
 
+.card:hover {
+  transform: scale(1.1);
+}
+
 .img {
 width: 50%;
 height: 10rem;
+}
+
+.heading {
+  font-family: 'Hind', sans-serif;
+}
+
+.title {
+  font-weight: normal;
+  font-family: 'Hind', sans-serif;
 }

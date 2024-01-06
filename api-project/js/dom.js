@@ -11,7 +11,7 @@ const DOMSelectors = {
     form: document.querySelector("#form"),
     search: document.querySelector("#find"),
     cards: document.querySelector(".display"),
-all: document.querySelector("#all"),
+    all: document.querySelector("#all"),
     };
 
 export {DOMSelectors};
