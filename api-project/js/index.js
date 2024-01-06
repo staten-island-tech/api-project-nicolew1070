@@ -2,7 +2,7 @@
 import "../css/style.css";
 import { DOMSelectors } from "./dom";
 
-const URL = `https://api.disneyapi.dev/character?`;
+const URL = `https://api.disneyapi.dev/character?pageSize=1000`;
 
 async function getData(URL) {
   try {
@@ -11,7 +11,9 @@ async function getData(URL) {
       throw new Error (response);
     } else {
       const data = await response.json();
-      card(data.data); 
+      console.log(data);
+      card(data.data);
+      addcard(data.data); 
     }
     } catch (error) {
       console.log(error, "Invalid")
@@ -20,20 +22,12 @@ async function getData(URL) {
  }
  getData(URL); 
 
-/*  async function getData(URL) {
-  const response = await fetch (URL);
-  const data = await response.json();
-  console.log(data);
- }
- getData(URL); */
-
 function card(arr) {
   arr.forEach((item) => DOMSelectors.cards.insertAdjacentHTML(
       "beforeend",
       `<div class="card"> 
     <h2 class="title">${item.name}</h2> 
-    <img class="img" src="${item.imageUrl}" alt="">
-    <h3></h3>`
+    <img class="img" src="${item.imageUrl}" alt="Picture of ${item.name}">`
     )
   )
 };
@@ -42,14 +36,19 @@ function clearfields () {
   DOMSelectors.search.value = "";
 };
 
-//does not work
+function clear () {
+  DOMSelectors.cards.innerHTML = "";
+};
+
+function addcard (arr) {
 DOMSelectors.form.addEventListener("click", function (event) {
  event.preventDefault();
  let search = DOMSelectors.search.value
- let newArr = data.filter((film) => film.films === search)
+ let newArr = arr.filter((film) => film.films.includes(search))
+clear();
  card(newArr);
  clearfields();
-});
+})};  
 
 
 
