@@ -82,3 +82,24 @@ height: 10rem;
   font-weight: normal;
   font-family: 'Hind', sans-serif;
 }
+
+@media screen and (max-width: 1200px) {
+  .pokemon {
+      width: 45%;
+  }
+  .heading{
+      margin: 5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .pokemon {
+      width: 100%;
+  }
+  .img{
+      width: 65%;
+  }
+  .button{
+      font-size: 1.2rem;
+  }
+}
