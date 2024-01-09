@@ -50,6 +50,7 @@ DOMSelectors.form.addEventListener("click", function (event) {
   if (newArr.length === 0) {
     document.querySelector("h2").textContent = "No characters were found for the given film. Please try a different one.";
   } else {
+    document.querySelector("h2").textContent = "Enter a film below! (Film name must be specific)";
     card(newArr);
   }
 })}; 
